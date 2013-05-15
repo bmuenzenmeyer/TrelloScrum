@@ -14,6 +14,7 @@
 ** Frank Geerlings <https://github.com/frankgeerlings>
 ** Cedric Gatay <https://github.com/CedricGatay>
 ** Kit Glennon <https://github.com/kitglen>
+** Brian Muenzenmeyer <https://github.com/bmuenzenmeyer>
 **
 */
 
@@ -52,6 +53,13 @@ $(function(){
 	});
 
 	calcListPoints();
+
+	//brian handler
+	$('body').on('click', '.item', function(){
+		updateFilters()
+	}).on('keyup', function(){
+		updateFilters();
+	});
 
 });
 
@@ -184,7 +192,16 @@ function ListCard(el, identifier){
 
 	this.__defineGetter__('points',function(){
 		//don't add to total when filtered out
-		return parsed&&(!filtered||($card.css('opacity')==1 && $card.css('display')!='none'))?points:''
+		//return parsed&&(!filtered||($card.css('opacity')==1 && $card.css('display')!='none'))?points:''
+		//brian edit
+		// console.log('_______________________________');
+		// console.log($card);
+		// console.log("is filtering on?" + filtered);
+		// console.log("points " + points);
+		
+		// console.log('is hidden? ' + $card.hasClass('hide'));
+		//return parsed&&(!filtered&&!$card.hasClass('hide'))?points:'';
+		return parsed&&(!$card.hasClass('hide'))?points:'';
 	});
 
 	setTimeout(that.refresh);
