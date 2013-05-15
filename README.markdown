@@ -37,4 +37,6 @@ Great improvements made by @nicpottier and @paullofte:
 * Added support for Zero Point Cards (0), Unknown Point Cards (?), Decimal Value Cards (.5)
 * In addition I added the functionality to have the list total reflect the current filtered set of cards.
 
+[Brian Muenzenmeyer](https://twitter.com/bmuenzenmeyer) cloned this 5/15/2013, and fixed filtered card additions for the latest version of Trello.
+
 
